@@ -23,6 +23,7 @@ public class WebhookController {
 			// quick validation: ensure there's an id field
 			if (rawPayload == null || rawPayload.isBlank()) {
 				log.warn("Received empty webhook payload");
+				System.out.println("Data: " + rawPayload);
 				return ResponseEntity.ok("ok");
 			}
 			// process asynchronously within service (service is transactional)
